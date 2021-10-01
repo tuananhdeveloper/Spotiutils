@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Spotiutils</string>
+    <string name="title_login">Welcome!</string>
+    <string name="msg_login">Please log in with your Spotify account to continue</string>
+    <string name="msg_connection_dialog">Spotiutils may not work without an active internet connection</string>
+    <string name="text_button_login">Log in</string>
+    <string name="text_dismiss_button_connection_dialog">Dimiss</string>
+    <string name="title_connection_dialog">No internet connection</string>
+    <string name="error_token_request">Can\'t get token</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_search">Search</string>
+    <string name="title_overview">Overview</string>
+    <string name="title_top">Top</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_globle">Globle</string>
+    <string name="title_last_played">Last played</string>
+    <string name="_0_00">0:00</string>
+    <string name="title_playlists">Playlists</string>
+    <string name="title_more"><![CDATA[More>]]></string>
+    <string name="title_recently_played">Recently Played</string>
+</resources>

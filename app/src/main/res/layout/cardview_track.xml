@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_6"
+    android:layout_marginBottom="@dimen/dp_6"
+    android:layout_marginStart="@dimen/dp_6"
+    android:layout_marginEnd="@dimen/dp_6"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardBackgroundColor="@color/primaryColor">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_track"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_80"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            app:shapeAppearance="@style/BorderedImageView1"
+            tools:src="@drawable/img_album"/>
+
+        <TextView
+            android:id="@+id/text_track_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_30"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            tools:text="Kobasolo"/>
+    </FrameLayout>
+</com.google.android.material.card.MaterialCardView>

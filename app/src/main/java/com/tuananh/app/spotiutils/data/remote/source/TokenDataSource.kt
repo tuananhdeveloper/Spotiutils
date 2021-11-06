@@ -5,4 +5,5 @@ import com.tuananh.app.spotiutils.util.OnDataCallback
 
 interface TokenDataSource {
     fun getToken(callback: OnDataCallback<TokenData>)
+    fun getRefreshedToken(refreshToken: String, callback: OnDataCallback<TokenData>)
 }

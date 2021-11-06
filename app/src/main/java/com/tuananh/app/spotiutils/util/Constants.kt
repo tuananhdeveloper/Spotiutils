@@ -1,5 +1,55 @@
 package com.tuananh.app.spotiutils.util
 
+object BaseConst {
+    const val ARTISTS = "artists"
+    const val ITEMS = "items"
+    const val TRACKS = "tracks"
+}
+
+object PlaylistsItemTracksModelConst {
+    const val HREF = "href"
+    const val TOTAL = "total"
+}
+
+object AudioFeaturesModelConst {
+    const val ACOUSTICNESS = "acousticness"
+    const val LIVENESS = "liveness"
+    const val DANCEABILITY = "danceability"
+    const val ENERGY = "energy"
+    const val SPEECHINESS = "speechiness"
+    const val INSTRUMENTALNESS = "instrumentalness"
+    const val VALENCE = "valence"
+    const val KEY = "key"
+    const val TEMPO = "tempo"
+}
+
+object PlaylistsItemModelConst {
+    const val COLLABORATIVE = "collaborative"
+    const val DESCRIPTION = "description"
+    const val HREF = "href"
+    const val ID = "id"
+    const val IMAGES = "images"
+    const val NAME = "name"
+    const val OWNER = "owner"
+    const val PUBLIC = "public"
+    const val TRACKS = "tracks"
+    const val TYPE = "type"
+    const val URI = "uri"
+}
+
+object OwnerModelConst {
+    const val DISPLAY_NAME = "display_name"
+    const val HREF = "href"
+    const val ID = "id"
+    const val TYPE = "type"
+    const val URI = "uri"
+}
+
+object RecentlyPlayedTrackModelConst {
+    const val TRACK = "track"
+    const val PLAYED_AT = "played_at"
+}
+
 object TokenDataConst {
     const val ACCESS_TOKEN = "access_token"
     const val TOKEN_TYPE = "token_type"
@@ -37,13 +87,35 @@ object AlbumModelConst {
     const val TOTAL_TRACKS = "total_tracks"
     const val TYPE = "type"
     const val URI = "uri"
+
+    const val DATE_FORMAT = "yyyy"
+}
+
+object ImageModelConst {
+    const val HEIGHT = "height"
+    const val URL = "url"
+    const val WIDTH = "width"
 }
 
 object ArtistModelConst {
+    const val POPULARITY = "popularity"
+    const val FOLLOWERS = "followers"
+    const val IMAGES = "images"
     const val HREF = "href"
     const val ID = "id"
     const val NAME = "name"
     const val TYPE = "type"
     const val URI = "uri"
+}
+
+object Followers {
+    const val HREF = "href"
+    const val TOTAL = "total"
+}
+object UserModelConst {
+    const val COUNTRY = "country"
+    const val DISPLAY_NAME = "display_name"
+    const val EMAIL = "email"
+    const val ID = "id"
 }
 

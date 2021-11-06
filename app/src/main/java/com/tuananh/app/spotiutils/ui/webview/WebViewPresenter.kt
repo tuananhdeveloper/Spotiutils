@@ -1,5 +1,6 @@
 package com.tuananh.app.spotiutils.ui.webview
 
+import android.util.Log
 import com.tuananh.app.spotiutils.PreparedData
 import com.tuananh.app.spotiutils.R
 import com.tuananh.app.spotiutils.data.local.repository.AuthCodeRepository
@@ -23,6 +24,7 @@ class WebViewPresenter(
         view.showLoading()
         tokenRepository.getToken(object: OnDataCallback<TokenData> {
             override fun onResponse(data: TokenData) {
+                Log.d("my_token", data.toString())
                 saveToken(data)
                 view.hideLoading()
                 view.navigate()
@@ -42,5 +44,4 @@ class WebViewPresenter(
     private fun prepareData(data: TokenData) {
         PreparedData.updateToken(data)
     }
-
 }

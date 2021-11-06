@@ -1,20 +1,19 @@
 package com.tuananh.app.spotiutils.util
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import com.tuananh.app.spotiutils.BuildConfig
 import java.net.HttpURLConnection
 import java.net.URL
-import java.util.*
+
 
 object NetworkUtil {
-    private const val GET_METHOD = "GET"
-    private const val POST_METHOD = "POST"
-    private const val AUTHORIZATION = "Authorization"
-    private const val CONTENT_TYPE = "Content-Type"
-    private const val JSON_TYPE = "application/json"
-    private const val BEARER = "Bearer"
-    private const val BASIC = "Basic"
+    const val GET_METHOD = "GET"
+    const val POST_METHOD = "POST"
+    const val CONTENT_TYPE = "Content-Type"
+    const val JSON_TYPE = "application/json"
+    const val BEARER = "Bearer"
+    const val BASIC = "Basic"
+
+    const val AUTHORIZATION = "Authorization"
 
     private fun initConnection(url: String, token: String): HttpURLConnection {
         val mUrl = URL(url)
@@ -42,8 +41,12 @@ object NetworkUtil {
         val urlConnection = initConnection(url, token)
         urlConnection.requestMethod = GET_METHOD
 
+        if(urlConnection.responseCode == HttpURLConnection.HTTP_OK) {
+            return Response(urlConnection.responseCode,
+                IOUtil.convertToStringBuilder(urlConnection.inputStream).toString())
+        }
         return Response(urlConnection.responseCode,
-            IOUtil.convertToStringBuilder(urlConnection.inputStream).toString())
+            IOUtil.convertToStringBuilder(urlConnection.errorStream).toString())
     }
 
     fun performPostRequest(url: String, token: String, requestBody: String): Response {
@@ -55,8 +58,12 @@ object NetworkUtil {
 
         IOUtil.writeData(requestBody, urlConnection.outputStream)
 
+        if(urlConnection.responseCode == HttpURLConnection.HTTP_OK) {
+            return Response(urlConnection.responseCode,
+                IOUtil.convertToStringBuilder(urlConnection.inputStream).toString())
+        }
         return Response(urlConnection.responseCode,
-            IOUtil.convertToStringBuilder(urlConnection.inputStream).toString())
+            IOUtil.convertToStringBuilder(urlConnection.errorStream).toString())
     }
 
 }

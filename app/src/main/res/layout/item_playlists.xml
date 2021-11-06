@@ -2,7 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="@dimen/dp_300"
     android:layout_height="@dimen/dp_100"
-    android:background="?attr/colorPrimary"
+    android:background="@color/gray"
+    android:layout_marginStart="@dimen/dp_10"
+    android:layout_marginEnd="@dimen/dp_10"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -15,24 +17,31 @@
 
     <TextView
         android:id="@+id/text_playlist_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_16"
-        android:layout_toEndOf="@id/image_playlists"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/sp_22"
-        tools:text="@tools:sample/lorem" />
+        android:textSize="@dimen/sp_18"
+        android:textStyle="bold"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_toEndOf="@id/image_playlists"
+        tools:text="@tools:sample/lorem/random" />
 
     <TextView
         android:id="@+id/text_playlist_owner"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_14"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="@dimen/dp_16"
         android:layout_marginBottom="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_16"
         android:layout_toEndOf="@id/image_playlists"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/sp_18"
         tools:text="@tools:sample/lorem" />
 
 </RelativeLayout>

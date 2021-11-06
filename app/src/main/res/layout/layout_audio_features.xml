@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor">
+
+    <TextView
+        android:id="@+id/text_acoustic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_acoustic"
+        android:textColor="@color/secondaryColor"
+        android:textSize="@dimen/sp_12"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_acoustic"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        app:indicatorColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_acoustic"
+        app:layout_constraintWidth_percent="0.4"
+        tools:progress="50" />
+
+    <TextView
+        android:id="@+id/text_lively"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/title_lively"
+        android:textColor="@color/secondaryColor"
+        android:textSize="@dimen/sp_12"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text_acoustic"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_lively"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        app:indicatorColor="@color/colorAccent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_lively"
+        app:layout_constraintWidth_percent="0.4"
+        tools:progress="50" />
+
+    <TextView
+        android:id="@+id/text_danceable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        android:text="@string/title_danceable"
+        android:textColor="@color/secondaryColor"
+        android:textSize="@dimen/sp_12"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_acoustic" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_danceable"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        app:indicatorColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_danceable"
+        app:layout_constraintWidth_percent="0.4"
+        tools:progress="50" />
+
+    <TextView
+        android:id="@+id/text_popularity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/title_popularity"
+        android:textColor="@color/secondaryColor"
+        android:textSize="@dimen/sp_12"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text_danceable"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_popularity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        app:indicatorColor="@color/colorAccent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_popularity"
+        app:layout_constraintWidth_percent="0.4"
+        tools:progress="50" />
+
+    <TextView
+        android:id="@+id/text_energetic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        android:text="@string/title_energetic"
+        android:textColor="@color/secondaryColor"
+        android:textSize="@dimen/sp_12"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_danceable" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_energetic"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        app:indicatorColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_energetic"
+        app:layout_constraintWidth_percent="0.4"
+        tools:progress="50" />
+
+    <TextView
+        android:id="@+id/text_speechful"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/title_speechful"
+        android:textColor="@color/secondaryColor"
+        android:textSize="@dimen/sp_12"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text_energetic"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_speechful"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        app:indicatorColor="@color/colorAccent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_speechful"
+        app:layout_constraintWidth_percent="0.4"
+        tools:progress="50" />
+
+    <TextView
+        android:id="@+id/text_instrumental"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        android:text="@string/title_instrumental"
+        android:textColor="@color/secondaryColor"
+        android:textSize="@dimen/sp_12"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_energetic" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_instrumental"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        app:indicatorColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_instrumental"
+        app:layout_constraintWidth_percent="0.4"
+        tools:progress="50" />
+
+    <TextView
+        android:id="@+id/text_valence"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/title_valence"
+        android:textColor="@color/secondaryColor"
+        android:textSize="@dimen/sp_12"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text_instrumental"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_valence"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        app:indicatorColor="@color/colorAccent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_valence"
+        app:layout_constraintWidth_percent="0.4"
+        tools:progress="50" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

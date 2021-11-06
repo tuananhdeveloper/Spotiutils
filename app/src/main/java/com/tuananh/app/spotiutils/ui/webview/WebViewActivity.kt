@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.webkit.*
 import android.widget.Toast
 import com.tuananh.app.spotiutils.BuildConfig
+import com.tuananh.app.spotiutils.PreparedData
 import com.tuananh.app.spotiutils.base.BaseActivity
 import com.tuananh.app.spotiutils.data.local.repository.AuthCodeRepository
 import com.tuananh.app.spotiutils.data.local.repository.TokenLocalRepository
@@ -68,6 +69,10 @@ class WebViewActivity: BaseActivity<ActivityWebviewBinding>(), WebViewContract.V
         Toast.makeText(this, getString(messageRes), Toast.LENGTH_LONG).show()
     }
 
+    override fun openWebView() {
+
+    }
+
     private fun buildUri(): Uri {
         state = UUID.randomUUID().toString()
         val uriBuilder = Uri.parse(AUTH_ENDPOINT).buildUpon()
@@ -104,7 +109,8 @@ class WebViewActivity: BaseActivity<ActivityWebviewBinding>(), WebViewContract.V
         const val AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
         const val RESPONSE_TYPE = "code"
         const val REDIRECT_URI = "http://localhost/callback"
-        val SCOPES = listOf("user-read-private", "user-read-email", "user-read-recently-played")
+        val SCOPES = listOf("user-read-private", "user-read-email",
+            "user-read-recently-played", "playlist-read-private", "user-top-read")
 
         const val MSG_ACCESS_DENIED = "Access denied!"
     }

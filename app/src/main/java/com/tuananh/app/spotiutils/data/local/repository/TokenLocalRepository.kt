@@ -7,7 +7,9 @@ class TokenLocalRepository private constructor(
     private val tokenLocalSource: TokenLocalSource
 ): TokenLocalSource {
     override fun saveToken(tokenData: TokenData) {
-        tokenLocalSource.saveToken(tokenData)
+        Thread {
+            tokenLocalSource.saveToken(tokenData)
+        }.start()
     }
 
     override fun readToken(): TokenData {

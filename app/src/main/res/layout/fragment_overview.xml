@@ -11,7 +11,7 @@
         android:id="@+id/appbar_overview"
         layout="@layout/appbar_fragment_overview" />
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
@@ -25,7 +25,7 @@
                 layout="@layout/cardview_last_played"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/dp_168"
-                android:layout_margin="@dimen/dp_16"
+                android:layout_margin="@dimen/dp_10"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -35,10 +35,11 @@
                 android:id="@+id/text_playlists"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dp_26"
+                android:layout_marginStart="@dimen/dp_16"
                 android:text="@string/title_playlists"
                 android:textColor="@android:color/white"
-                android:textSize="@dimen/sp_22"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cardview_last_played" />
 
@@ -46,10 +47,10 @@
                 android:id="@+id/text_playlists_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/dp_26"
+                android:layout_marginEnd="@dimen/dp_16"
                 android:text="@string/title_more"
                 android:textColor="@android:color/white"
-                android:textSize="@dimen/sp_16"
+                android:textSize="@dimen/sp_10"
                 app:layout_constraintBottom_toBottomOf="@id/text_playlists"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/text_playlists" />
@@ -61,8 +62,7 @@
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:layout_marginTop="@dimen/dp_16"
-                android:layout_marginStart="@dimen/dp_26"
-                android:layout_marginEnd="@dimen/dp_26"
+                android:layout_marginStart="@dimen/dp_16"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -70,30 +70,53 @@
                 tools:listitem="@layout/item_playlists"
                 tools:itemCount="4"/>
 
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/loading_playlists"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                app:indicatorColor="@color/colorAccent"
+                app:layout_constraintTop_toTopOf="@id/recyclerview_playlists"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/recyclerview_playlists" />
+
             <TextView
                 android:id="@+id/text_recently_played"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title_recently_played"
-                android:textSize="@dimen/sp_22"
                 android:textColor="@android:color/white"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold"
                 android:layout_marginTop="@dimen/dp_16"
-                android:layout_marginStart="@dimen/dp_26"
+                android:layout_marginStart="@dimen/dp_16"
                 app:layout_constraintTop_toBottomOf="@id/recyclerview_playlists"
-                app:layout_constraintLeft_toLeftOf="parent"
-                />
+                app:layout_constraintLeft_toLeftOf="parent" />
 
             <TextView
                 android:id="@+id/text_recently_played_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title_more"
-                android:textSize="@dimen/sp_16"
+                android:textSize="@dimen/sp_10"
                 android:textColor="@android:color/white"
-                android:layout_marginEnd="@dimen/dp_26"
+                android:layout_marginEnd="@dimen/dp_16"
                 app:layout_constraintTop_toTopOf="@id/text_recently_played"
                 app:layout_constraintBottom_toBottomOf="@id/text_recently_played"
                 app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/loading_recently_played"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                app:indicatorColor="@color/colorAccent"
+                app:layout_constraintTop_toTopOf="@id/recyclerview_recently_played"
+                app:layout_constraintBottom_toBottomOf="@id/recyclerview_recently_played"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -101,11 +124,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/dp_16"
+                android:nestedScrollingEnabled="false"
                 app:layout_constraintTop_toBottomOf="@id/text_recently_played"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:itemCount="20"
+                tools:itemCount="2"
                 tools:listitem="@layout/item_recently_played"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>

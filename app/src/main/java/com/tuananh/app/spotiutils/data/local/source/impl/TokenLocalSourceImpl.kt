@@ -6,7 +6,7 @@ import com.tuananh.app.spotiutils.data.remote.source.impl.TokenDataSourceImpl
 import com.tuananh.app.spotiutils.util.MyEncryptedSharedPrefs
 
 class TokenLocalSourceImpl private constructor(): TokenLocalSource {
-
+    
     override fun saveToken(tokenData: TokenData) {
         MyEncryptedSharedPrefs.writeFile(TOKEN_DATA_FILE_NAME, tokenData)
     }

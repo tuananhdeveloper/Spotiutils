@@ -25,11 +25,11 @@ class SplashActivity: AppCompatActivity() {
         }
         else {
             if(!isUserLoggedIn()) {
-                prepareData()
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }
             else {
+                prepareData()
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             }

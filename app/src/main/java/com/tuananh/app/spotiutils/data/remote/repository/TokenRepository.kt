@@ -12,6 +12,10 @@ class TokenRepository private constructor(
         tokenDataSource.getToken(callback)
     }
 
+    override fun getRefreshedToken(refreshToken: String, callback: OnDataCallback<TokenData>) {
+        tokenDataSource.getRefreshedToken(refreshToken, callback)
+    }
+
     companion object {
         private var instance: TokenRepository? = null
 

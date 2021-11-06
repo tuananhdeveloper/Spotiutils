@@ -1,12 +1,9 @@
 package com.tuananh.app.spotiutils.util
 
-import android.content.Context
 import androidx.security.crypto.EncryptedFile
 import androidx.security.crypto.MasterKey
-import androidx.security.crypto.MasterKeys
 import com.tuananh.app.spotiutils.ui.App
 import java.io.*
-import java.nio.charset.StandardCharsets
 
 object MyEncryptedSharedPrefs {
 
@@ -20,7 +17,7 @@ object MyEncryptedSharedPrefs {
             val fileToWrite = fileName
             val myFile = File(it.filesDir, fileToWrite)
             if(myFile.exists()) {
-                deleteFile(fileName)
+                deleteFile(it.filesDir, fileName)
             }
             val encryptedFile = EncryptedFile.Builder(
                 it,
@@ -52,14 +49,13 @@ object MyEncryptedSharedPrefs {
 
             val inputStream = encryptedFile.openFileInput()
             val ois = ObjectInputStream(inputStream)
-            val myObject = ois.readObject()
-            return myObject
+            return ois.readObject()
         }
         return null
     }
 
-    fun deleteFile(fileName: String) {
-        File(fileName).delete()
+    fun deleteFile(parent: File, fileName: String) {
+        File(parent, fileName).delete()
     }
 
 }
